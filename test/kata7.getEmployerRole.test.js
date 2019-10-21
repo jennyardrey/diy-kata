@@ -1,7 +1,7 @@
 const { getEmployerRole } = require("../src");
 
 describe("getEmployerRole", () => {
-  const result = getEmployerRole();
+ 
   const employees = [{
     name:'Jenny', role:'Retail monkey'
   }, {
@@ -15,8 +15,8 @@ describe("getEmployerRole", () => {
 }, {
   name:'Jamie', role:'Digital monkey'
 }];
-  xit("returns the employee's role in the company", () => {
-    expect(getEmployerRole(employees)).toBe('Retail monkey');
-    expect(result).toBe('Lab monkey');
+  it("returns the employee's role in the company", () => {
+    expect(getEmployerRole('Jenny', employees)).toBe('Retail monkey');
+    expect(getEmployerRole('Hammond', employees)).toBe('Lab monkey');
   });
 });
